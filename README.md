@@ -30,7 +30,13 @@ With just 2 components, the API is very simple to learn, yet powerful.
 * [Layout](docs/api/Layout.md) to define layouts
 * [Section](docs/api/Section.md) to divide the layout into multiple sections
 
-## Define contribution functions
+## Using preact-layout
+* Define contribution functions
+* Create a layout
+* Use the contribution functions in your components
+* Nest the component inside the layout
+
+### Define contribution functions
 preact-layout allows you to define [contribution functions](https://download.github.io/preact-layout/docs/api/contribution-functions.html)
 that are used as JSX tags that signal that the components contained in those tags
 should be contributed to *another section* of the parent layout.
@@ -43,7 +49,8 @@ function Header(){}
 function Footer(){}
 ```
 
-Then, create a layout with Header and Footer sections:
+### Create a layout
+Create a layout with sections for the Header and Footer:
 
 ```js
 function MyLayout({children}) {return (
@@ -63,6 +70,7 @@ function MyLayout({children}) {return (
 )}
 ```
 
+### Use the contribution functions in your components
 Now, we can build components that use the contribution functions to contribute
 components to the related sections of the layout:
 
@@ -76,6 +84,7 @@ function MyPage(){return (
 )}
 ```
 
+### Nest the component inside the layout
 Finally, render the component nested within the layout:
 
 ```js
@@ -101,61 +110,6 @@ This will result in:
 	<footer>
 		goodbye
 	</footer>
-</div>
-```
-
-You can now change the layout completely separate from the component. As long
-as both refer to the same contribution functions `Header` and `Footer`
-(which you create and are custom to your app), things will work as expected.
-
-You can reuse those contribution functions across multiple layouts:
-
-```js
-function ReversedLayout({children}) {return (
-	<Layout>
-		<div>
-			<footer>
-				<Section type={Footer}><i>footer</i></Section>
-			</footer>
-
-			<Section>{children}</Section>
-
-			<header>
-				<Section type={Header}><b>header</b></Section>
-			</header>
-		</div>
-	</Layout>
-)}
-```
-> Note how `ReversedLayout` also uses `Footer` and `Header` contribution functions
-
-We can now simply render `MyPage` with this new `ReversedLayout` and get a
-completely different end result without changing one line of code in the
-`MyPage` component:
-
-```js
-render(
-	<ReversedLayout>
-		<MyPage />
-	</ReversedLayout>
-	,
-	document.getElementsByTagName('body')[0]
-)
-```
-
-Renders:
-
-```html
-<div>
-	<footer>
-		goodbye
-	</footer>
-	<div>
-		<article>main article</article>
-	</div>
-	<header>
-		<h1>my page</h1>
-	</header>
 </div>
 ```
 
