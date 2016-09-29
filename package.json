@@ -1,6 +1,6 @@
 {
   "name": "preact-layout",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Small and simple layout components for preact",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -17,7 +17,7 @@
     "test:watch": "npm test -- --watch",
     "test:cov": "npm test -- --coverage",
     "test:examples": "babel-node examples/testAll.js",
-    "check:examples": "npm run build:examples && npm run lint:examples && npm run test:examples",
+    "check:examples": "npm run build:examples && npm run test:examples",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
     "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/index.jsx dist/preact-layout.umd.js",
