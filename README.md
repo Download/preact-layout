@@ -31,7 +31,7 @@ With just 2 components, the API is very simple to learn, yet powerful.
 * [Section](docs/api/Section.md) to divide the layout into multiple sections
 
 ## Define contribution functions
-preact-layout allows you to define [contribution functions](docs/api/contribution-functions.md)
+preact-layout allows you to define [contribution functions](https://download.github.io/preact-layout/docs/api/contribution-functions.html)
 that are used as JSX tags that signal that the components contained in those tags
 should be contributed to *another section* of the parent layout.
 
