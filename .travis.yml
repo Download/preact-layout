@@ -15,4 +15,3 @@ cache:
   directories:
   - $HOME/.npm
   - examples/header-footer/node_modules
-  - examples/nested/node_modules
