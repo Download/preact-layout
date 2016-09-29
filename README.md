@@ -9,6 +9,22 @@
 
 ![preact layout](https://cdn.rawgit.com/download/preact-layout/0.2.0/preact-layout.png)
 
+**Declaratively contribute components to the parent layout**
+
+[Preact](https://preactjs.com/) is beautiful and pure. Literally, because with
+Preact we mostly write pure functions that take properties and render markup,
+possibly including child components that we control via their props. Information
+flows one way and everything is good.
+
+But I just want to set the title of the page in the header. Do I really have to
+make the root component aware of the title of each page? What if I need something
+in the footer as well? Or in some sidebar? I want my Page
+component to contribute these components to it's parent, without it knowing about
+the parent and without the parent component knowing about the Page component...
+Is it even possible?
+
+preact-layout does not only make this possible, it makes it **simple**!
+
 ## Simple but powerful API
 With just 2 components, the API is very simple to learn, yet powerful.
 * [Layout](docs/api/Layout.md) to define layouts
