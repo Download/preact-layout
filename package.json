@@ -1,6 +1,6 @@
 {
   "name": "preact-layout",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Small and simple layout components for preact",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -29,7 +29,7 @@
     "docs:prepare": "gitbook install",
     "docs:build": "npm run docs:prepare && gitbook build -g Download/preact-layout",
     "docs:watch": "npm run docs:prepare && gitbook serve",
-    "docs:publish": "npm run docs:clean && npm run docs:build && cd _book && git init && git commit --allow-empty -m 'update book' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update book' && git push git@github.com:Download/preact-layout gh-pages --force"
+    "docs:publish": "npm run docs:clean && npm run docs:build && cd _book && git init && git commit --allow-empty -m \"update book\" && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am \"update book\" && git push git@github.com:Download/preact-layout gh-pages --force"
   },
   "repository": {
     "type": "git",
@@ -88,9 +88,10 @@
     "gitbook-cli": "^2.3.0",
     "glob": "^6.0.4",
     "jest": "^15.1.1",
-		"loose-envify": "^1.1.0",
+    "loose-envify": "^1.1.0",
     "preact-render-to-string": "^3.1.1",
     "rimraf": "^2.3.4",
+    "touch": "^1.0.0",
     "webpack": "^1.9.6"
   },
   "npmName": "preact-layout",

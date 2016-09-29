@@ -6,5 +6,5 @@
   * [Examples](/docs/getting-started/Examples.md)
 * [Component Reference](/docs/api/README.md)
   * [Layout](/docs/api/Layout.md)
-  * [LayoutSection](/docs/api/LayoutSection.md)
-  * [LayoutContribution](/docs/api/LayoutContribution.md)
+  * [Section](/docs/api/Section.md)
+	* [contribution functions](/docs/api/contribution-functions.md)

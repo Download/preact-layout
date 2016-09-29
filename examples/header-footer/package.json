@@ -3,9 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-2": "^6.16.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {
+    "preact": "^6.1.0",
+    "preact-layout": "^0.1.0"
   },
   "scripts": {
+    "start": "webpack-dev-server --output-path public --output-filename bundle.js \"./src\" --content-base public --port 8888"
   }
 }

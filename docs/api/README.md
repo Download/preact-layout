@@ -1,7 +1,7 @@
-# Component Reference
+## Component Reference
 
 * [Layout](Layout.md) - Create layouts using `Layout`
-* [LayoutSection](LayoutSection.md) - Divide your layout into named `Section`s
-* [LayoutContribution](LayoutContribution.md) - Let child components  make `Contribution`s to the layout
+* [Section](Section.md) - Divide your layout into named `Section`s
+* [contribution functions](contribution-functions.md) - Are the mutual contract between layouts and components
 
 [Back to docs](../README.md)

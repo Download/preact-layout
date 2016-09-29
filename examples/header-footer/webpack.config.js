@@ -21,9 +21,6 @@ var config = {
       { test: /\.jsx$/, loaders: ['babel-loader'], exclude: /node_modules/ }
     ]
   },
-	externals: {
-		preact: 'preact',
-	},
   output: {
     libraryTarget: 'umd'
   },
@@ -34,18 +31,5 @@ var config = {
     })
   ]
 };
-
-if (env === 'production') {
-  config.plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        pure_getters: true,
-        unsafe: true,
-        unsafe_comps: true,
-        warnings: false
-      }
-    })
-  )
-}
 
 module.exports = config
