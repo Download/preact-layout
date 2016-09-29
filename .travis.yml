@@ -4,7 +4,7 @@ node_js:
   - "5"
   - "6"
 script:
-  - npm run check:src
+  - npm run test
   - npm run build
   - npm run check:examples
 branches:

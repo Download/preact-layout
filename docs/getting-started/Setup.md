@@ -8,19 +8,18 @@ npm install --save preact-layout
 ## Require
 ```js
 var Layout = require('preact-layout').Layout
-var LayoutSection = require('preact-layout').LayoutSection
-var LayoutContribution = require('preact-layout').LayoutContribution
+var Section = require('preact-layout').Section
 ```
 
 ## Import
 ```js
-import { Layout, LayoutSection, LayoutContribution } from 'preact-layout'
+import { Layout, Section } from 'preact-layout'
 ```
 
 ## AMD
 ```js
-define(['preact-layout'], function(pl){
-	const { Layout, LayoutSection, LayoutContribution } = pl
+define(['preact-layout'], function(preactLayout){
+	const { Layout, Section } = preactLayout
 })
 ```
 
