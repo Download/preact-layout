@@ -1,6 +1,6 @@
 # Basic Usage
 
-Define functions to represent the different sections of your website / app:
+Define *contribution functions* to represent the different sections of your website / app:
 ```js
 function Header(){}
 function Footer(){}
@@ -8,9 +8,9 @@ function Footer(){}
 
 Then use `Layout` to create a layout which is subdivided in sections. Use `Section`
 to create those sections. There should be exactly one main section (not associated
-with a section function) and any `children` should be rendered inside this main section.
+with a contribution function) and any `children` should be rendered inside this main section.
 In addition, layouts can have zero or more extra sections, each of which must be
-associated with a different section function, using the `type`  attribute.
+associated with a different contribution function, using the `type`  attribute.
 
 Have a look at this example:
 
@@ -35,7 +35,7 @@ function MyLayout({children}) {
 Much simpler than it sounded right? But here's the cool trick: Any children
 of the main section will be rendered before the sections themselves and if they
 produce *layout contributions*, those contributions will be moved to the correct
-section based on the associated section function.
+section based on the associated contribution function.
 
 Again have a look at an example:
 

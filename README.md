@@ -161,14 +161,14 @@ Renders:
 
 ## Getting Started
 Getting started with preact-layout:
-* [Setup](docs/getting-started/Setup.md) - Add preact-layout to your project
-* [Basic Usage](docs/getting-started/Basic-usage.md) - Using Layout, Section and contribution functions
-* [Examples](docs/getting-started/Examples.md) - Learn by example!
+* [Setup](https://download.github.io/preact-layout/docs/getting-started/Setup.html) - Add preact-layout to your project
+* [Basic Usage](https://download.github.io/preact-layout/docs/getting-started/Basic-usage.html) - Using Layout, Section and contribution functions
+* [Examples](https://download.github.io/preact-layout/docs/getting-started/Examples.html) - Learn by example!
 
 ## Component Reference
-* [Layout](docs/api/Layout.md) - Create layouts using `Layout`
-* [Section](docs/api/Section.md) - Divide your layout into named `Section`s
-* [contribution functions](docs/api/contribution-functions.md) - Defining conribution functions
+* [Layout](https://download.github.io/preact-layout/docs/api/Layout.html) - Create layouts using `Layout`
+* [Section](https://download.github.io/preact-layout/docs/api/Section.html) - Divide your layout into named `Section`s
+* [contribution functions](https://download.github.io/preact-layout/docs/api/contribution-functions.html) - Defining conribution functions
 
 ## Performance considerations
 When collecting contributions, preact-layout peeks ahead at the elements that

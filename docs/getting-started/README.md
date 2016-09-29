@@ -6,4 +6,3 @@ Getting started with preact-layout!
 * [Basic Usage](Basic-usage.md) - Using Layout, Section and contribution functions
 * [Examples](Examples.md) - Learn by example!
 
-[Back to docs](../README.md)
