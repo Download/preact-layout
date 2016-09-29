@@ -22,7 +22,7 @@
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
     "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/index.jsx dist/preact-layout.umd.js",
     "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.jsx dist/preact-layout.min.js",
-    "build:examples": "babel-node examples/buildAll.jsx",
+    "build:examples": "babel-node examples/buildAll.js",
     "build": "npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min",
     "prepublish": "npm run clean && npm run build && npm run test && check-es3-syntax lib/ dist/ --kill --print",
     "docs:clean": "rimraf _book",
