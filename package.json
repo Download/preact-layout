@@ -84,7 +84,7 @@
     "babel-plugin-transform-react-jsx": "^6.8.0",
     "babel-register": "^6.3.13",
     "check-es3-syntax-cli": "^0.1.1",
-    "cross-env": "^1.0.7",
+    "cross-env": "^3.1.0",
     "gitbook-cli": "^2.3.0",
     "glob": "^6.0.4",
     "jest": "^15.1.1",
