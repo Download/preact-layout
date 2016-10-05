@@ -11,7 +11,9 @@
 
 ### Think out of the box!
 
-<sup><sub><sup><sub>.</sub></sup></sub></sup>
+
+
+
 
 [Preact](https://preactjs.com/) is beautiful and pure. Literally, because with
 Preact we mostly write pure components that take properties and render markup
