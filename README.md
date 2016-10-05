@@ -9,26 +9,58 @@
 
 ![preact layout](https://cdn.rawgit.com/download/preact-layout/0.2.0/preact-layout.png)
 
-**Declaratively contribute components to the parent layout**
-
 [Preact](https://preactjs.com/) is beautiful and pure. Literally, because with
-Preact we mostly write pure functions that take properties and render markup,
+Preact we mostly write pure components that take properties and render markup
 possibly including child components that we control via their props. Information
 flows one way and everything is good.
 
-But I just want to set the title of the page in the header. Do I really have to
-make the root component aware of the title of each page? What if I need something
-in the footer as well? Or in some sidebar? I want my Page
-component to contribute these components to it's parent, without it knowing about
-the parent and without the parent component knowing about the Page component...
+But what if a component needs to render some data in another section of the page?
+In the header for example? Do we really have to make the root component aware of
+the title of each page? What if we need something in the footer as well? Or in
+some sidebar? We want our components to be able to contribute content to other
+sections of the page, even if those sections are higher up the tree...
 Is it even possible?
 
 preact-layout does not only make this possible, it makes it **simple**!
 
-## Simple but powerful API
+## Getting Started
+Getting started with preact-layout:
+* Play with the [Preact Layout Kickstart](http://codepen.io/StijnDeWitt/pen/rrzJEA?editors=0010) CodePen.
+* [Setup](https://download.github.io/preact-layout/docs/getting-started/Setup.html) - Add preact-layout to your project
+* [Basic Usage](https://download.github.io/preact-layout/docs/getting-started/Basic-usage.html) - Using Layout, Section and contribution functions
+* [Examples](https://download.github.io/preact-layout/docs/getting-started/Examples.html) - Learn by example!
+
+## Why
+Preact Layout elegantly solves some common layout issues you will undoubtedly
+encounter when using Preact, due to the hierarchical nature of the component
+tree and the one-way data flow.
+
+### Simple but powerful API
 With just 2 components, the API is very simple to learn, yet powerful.
 * [Layout](docs/api/Layout.md) to define layouts
 * [Section](docs/api/Section.md) to divide the layout into multiple sections
+
+### Lightweight
+preact-layout is microscopically small. The sources are just over 2 Kb
+and the minified and gzipped distribution file weighs only 1 kB.
+
+### Well documented
+A good library needs plenty of good docs. In the case of preact-layout, the
+docs are way bigger than the library itself! We have a
+[usage guide](https://download.github.io/preact-layout/docs/getting-started/Basic-usage.html),
+[API docs](https://download.github.io/preact-layout/docs/api/),
+[examples](https://download.github.io/preact-layout/docs/getting-started/Examples.html) and a
+[Preact Layout Kickstart](http://codepen.io/StijnDeWitt/pen/rrzJEA?editors=0010) CodePen to learn from.
+
+### Well tested
+Good tests ensure not only that the code works, but that it keeps working! We use [Travis
+CI](https://travis-ci.org/Download/preact-layout) to test every push to master so we
+catch any bugs before they make it into a release.
+
+### Open Source, Open Community
+preact-layout is Open Source software with a
+[public code repository](https://github.com/download/preact-layout) and
+[public issue tracker](https://github.com/download/preact-layout/issues).
 
 ## Using preact-layout
 * Define contribution functions
@@ -112,13 +144,7 @@ This will result in:
 	</footer>
 </div>
 ```
-
-## Getting Started
-Getting started with preact-layout:
-* Play with the [Preact Layout Kickstart](http://codepen.io/StijnDeWitt/pen/rrzJEA) CodePen.
-* [Setup](https://download.github.io/preact-layout/docs/getting-started/Setup.html) - Add preact-layout to your project
-* [Basic Usage](https://download.github.io/preact-layout/docs/getting-started/Basic-usage.html) - Using Layout, Section and contribution functions
-* [Examples](https://download.github.io/preact-layout/docs/getting-started/Examples.html) - Learn by example!
+Read more in the [Basic Usage Guide](https://download.github.io/preact-layout/docs/getting-started/Basic-usage.html).
 
 ## Component Reference
 * [Layout](https://download.github.io/preact-layout/docs/api/Layout.html) - Create layouts using `Layout`
@@ -130,8 +156,9 @@ When collecting contributions, preact-layout peeks ahead at the elements that
 the child components will produce by rendering those child components. The
 resulting elements could itself again contain components, which would need to
 be rendered as well, leading to recursive rendering that of course comes at a
-performance cost. You can tune this cost by setting the `recurse` attribute on
-the `Layout` to some positive number. It defaults to `9`.
+performance cost. You can tune this cost by setting the
+[recurse](https://download.github.io/preact-layout/docs/api/Layout.html#recurse)
+attribute on the `Layout` to some positive number. It defaults to `9`.
 
 ## Issues
 Add an issue in this project's [issue tracker](https://github.com/download/preact-layout/issues)
