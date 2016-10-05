@@ -1,6 +1,6 @@
 {
   "name": "preact-layout",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "Small and simple layout components for preact",
   "main": "lib/index.js",
   "module": "es/index.js",

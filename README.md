@@ -31,9 +31,9 @@ Getting started with preact-layout:
 * [Examples](https://download.github.io/preact-layout/docs/getting-started/Examples.html) - Learn by example!
 
 ## Why
-Preact Layout elegantly solves some common layout issues you will undoubtedly
+Preact Layout elegantly solves some common layout challenges you will undoubtedly
 encounter when using Preact, due to the hierarchical nature of the component
-tree and the one-way data flow.
+tree and the one-way data flow. Preact Layout allows you to think out of the box.
 
 ### Simple but powerful API
 With just 2 components, the API is very simple to learn, yet powerful.
