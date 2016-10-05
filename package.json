@@ -87,7 +87,7 @@
     "cross-env": "^1.0.7",
     "gitbook-cli": "^2.3.0",
     "glob": "^6.0.4",
-    "jest": "^15.1.1",
+    "jest": "^16.0.1",
     "loose-envify": "^1.1.0",
     "preact-render-to-string": "^3.1.1",
     "rimraf": "^2.3.4",
