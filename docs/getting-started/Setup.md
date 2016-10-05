@@ -25,5 +25,5 @@ define(['preact-layout'], function(preactLayout){
 
 ## Script tag
 ```html
-<script src="https://cdn.rawgit.com/download/preact-layout/VERSION/preact-layout.min.js"></script>
+<script src="https://cdn.rawgit.com/download/preact-layout/VERSION/dist/preact-layout.min.js"></script>
 ```

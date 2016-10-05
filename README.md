@@ -115,6 +115,7 @@ This will result in:
 
 ## Getting Started
 Getting started with preact-layout:
+* Play with the [Preact Layout Kickstart](http://codepen.io/StijnDeWitt/pen/rrzJEA) CodePen.
 * [Setup](https://download.github.io/preact-layout/docs/getting-started/Setup.html) - Add preact-layout to your project
 * [Basic Usage](https://download.github.io/preact-layout/docs/getting-started/Basic-usage.html) - Using Layout, Section and contribution functions
 * [Examples](https://download.github.io/preact-layout/docs/getting-started/Examples.html) - Learn by example!
