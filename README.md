@@ -9,7 +9,7 @@
 
 ![preact layout](https://cdn.rawgit.com/download/preact-layout/0.2.0/preact-layout.png)
 
-## Think out of the box!
+### Think out of the box!
 
 <sup><sub><sup><sub>.</sub></sup></sub></sup>
 
