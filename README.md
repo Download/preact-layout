@@ -9,6 +9,10 @@
 
 ![preact layout](https://cdn.rawgit.com/download/preact-layout/0.2.0/preact-layout.png)
 
+## Think out of the box!
+
+<sup><sub><sup><sub>.</sub></sup></sub></sup>
+
 [Preact](https://preactjs.com/) is beautiful and pure. Literally, because with
 Preact we mostly write pure components that take properties and render markup
 possibly including child components that we control via their props. Information
