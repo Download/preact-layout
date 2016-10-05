@@ -1,4 +1,4 @@
-# preact-layout
+﻿# preact-layout
 #### Small and simple layout library for Preact.
 
 [![npm](https://img.shields.io/npm/v/preact-layout.svg)](https://npmjs.com/package/preact-layout)
@@ -11,9 +11,10 @@
 
 ### Think out of the box!
 
+&nbsp; 　 　 　
 
-
-
+&nbsp;
+ 　 　 　
 
 [Preact](https://preactjs.com/) is beautiful and pure. Literally, because with
 Preact we mostly write pure components that take properties and render markup
