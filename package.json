@@ -86,7 +86,7 @@
     "check-es3-syntax-cli": "^0.1.1",
     "cross-env": "^1.0.7",
     "gitbook-cli": "^2.3.0",
-    "glob": "^6.0.4",
+    "glob": "^7.1.1",
     "jest": "^15.1.1",
     "loose-envify": "^1.1.0",
     "preact-render-to-string": "^3.1.1",
