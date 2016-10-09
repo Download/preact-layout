@@ -65,68 +65,38 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function Layout(_ref, context) {
+		var className = _ref.className;
+		var recurse = _ref.recurse;
+		var children = _ref.children;
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+		var props = _objectWithoutProperties(_ref, ['className', 'recurse', 'children']);
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+		var _getSections = getSections(children);
 
-	var Layout = function (_Component) {
-		_inherits(Layout, _Component);
+		var main = _getSections.main;
+		var sections = _getSections.sections;
 
-		function Layout() {
-			_classCallCheck(this, Layout);
+		processNode(main, sections, _extends({}, context), recurse);
+		return children && children.length === 1 ? children[0] : (0, _preact.h)(
+			'div',
+			{ className: className || 'Layout' },
+			children
+		);
+	}
 
-			return _possibleConstructorReturn(this, _Component.apply(this, arguments));
-		}
+	function Section(_ref2, context) {
+		var type = _ref2.type;
+		var children = _ref2.children;
 
-		Layout.prototype.render = function render(_ref, context) {
-			var className = _ref.className;
-			var recurse = _ref.recurse;
-			var children = _ref.children;
+		var props = _objectWithoutProperties(_ref2, ['type', 'children']);
 
-			var props = _objectWithoutProperties(_ref, ['className', 'recurse', 'children']);
-
-			var _getSections = getSections(children);
-
-			var main = _getSections.main;
-			var sections = _getSections.sections;
-
-			processNode(main, sections, _extends({}, context), recurse);
-			return children && children.length === 1 ? children[0] : (0, _preact.h)(
-				'div',
-				{ className: className || 'Layout' },
-				children
-			);
-		};
-
-		return Layout;
-	}(_preact.Component);
-
-	var Section = function (_Component2) {
-		_inherits(Section, _Component2);
-
-		function Section() {
-			_classCallCheck(this, Section);
-
-			return _possibleConstructorReturn(this, _Component2.apply(this, arguments));
-		}
-
-		Section.prototype.render = function render(_ref2) {
-			var type = _ref2.type;
-			var children = _ref2.children;
-
-			var props = _objectWithoutProperties(_ref2, ['type', 'children']);
-
-			return children && children.length === 1 ? children[0] : (0, _preact.h)(
-				'div',
-				props,
-				children
-			);
-		};
-
-		return Section;
-	}(_preact.Component);
+		return children && children.length === 1 ? children[0] : (0, _preact.h)(
+			'div',
+			props,
+			children
+		);
+	}
 
 	function getSections(n, result) {
 		if (!result) result = { sections: [] };
@@ -153,12 +123,14 @@ return /******/ (function(modules) { // webpackBootstrap
 			if (isContribution(n, sections)) {
 				if (!results[n.nodeName]) results[n.nodeName] = [];
 				if (n.attributes && n.attributes.append) results[n.nodeName].push.apply(results[n.nodeName], n.children || []);else if (n.attributes && n.attributes.prepend) results[n.nodeName].unshift.apply(results[n.nodeName], n.children || []);else results[n.nodeName] = n.children || [];
-				return;
+				return; // continue
 			}
+			leftovers.push(n);
 			if (typeof n.nodeName == 'function' && recurse) {
 				var props = _extends({}, n.nodeName.defaultProps, n.attributes, { children: n.children });
 				if (n.nodeName.prototype && typeof n.nodeName.prototype.render == 'function') {
-					var c = new n.nodeName(props, context);
+					var rn = void 0,
+					    c = new n.nodeName(props, context);
 					c.props = props;
 					c.context = context;
 					if (c.componentWillMount) c.componentWillMount();
@@ -167,7 +139,6 @@ return /******/ (function(modules) { // webpackBootstrap
 				} else n = n.nodeName(props, context);
 				recurse--;
 			}
-			leftovers.push(n);
 			processNode(n, sections, context, recurse, collectOnly, results);
 		});
 		if (!collectOnly) {
@@ -180,10 +151,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	function isContribution(n, sections) {
-		var filtered = sections.filter(function (s) {
+		return sections.filter(function (s) {
 			return n.nodeName === s.attributes.type;
-		});
-		return filtered.length > 0;
+		}).length > 0;
 	}
 
 	exports.Layout = Layout;

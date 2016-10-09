@@ -1,7 +1,7 @@
 # Contributing
 
 Thanks for considering to contribute to preact-layout! For small contributions,
-go right ahead and create a PR follwoing the instructions below. For bigger
+go right ahead and create a PR following the instructions below. For bigger
 contributions, consider [creating an issue](https://github.com/download/preact-layout/issues/new)
 first, so we can discuss.
 
@@ -23,13 +23,13 @@ Before we start changing stuff, let's build everything and run the tests to make
 sure that everything is still fine.
 
 #### Build all
-Running the `build` task will create both a CommonJS module-per-module build and a UMD build.
+Running the `build` task will create both a CommonJS and a UMD build.
 ```sh
 npm run build
 ```
 
 #### Build only CommonJS
-To create just a CommonJS module-per-module build:
+To create just a CommonJS build:
 ```sh
 npm run build:lib
 ```
@@ -63,8 +63,8 @@ It's good practice to write a (couple of) test(s) that puts your new code throug
 With your new tests in place, write the code that makes them pass.
 
 ### Write documentation
-
-Improvements to the documentation are always welcome. In the docs we abide by typographic rules, so instead of ' you should use '. Same goes for “ ” and dashes (—) where appropriate. These rules only apply to the text, not to code blocks.
+Remember, if it's not documented, it might as well not exist. Any new features
+should get a section in the documentation explaining it. 
 
 #### Installing Gitbook
 To install the latest version of `gitbook` and prepare to build the documentation, run the following:
@@ -106,8 +106,6 @@ To build and test the official preact-layout examples, run the following:
 npm run build:examples
 npm run test:examples
 ```
-
-Not all examples have tests. If you see an example project without tests, you are very welcome to add them in a way consistent with the examples that have tests.
 
 Please visit the [Examples page](http://download.github.io/preact-layout/docs/introduction/Examples.html) for information on running individual examples.
 

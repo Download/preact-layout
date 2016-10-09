@@ -1,22 +1,18 @@
 import { h, Component } from 'preact'
 
-class Layout extends Component {
-	render({className, recurse, children, ...props}, context) {
-		const { main, sections } = getSections(children)
-		processNode(main, sections, { ...context }, recurse)
-		return children && children.length === 1 ? children[0] : (
-			<div className={className || 'Layout'}>{children}</div>
-		)
-	}
+function Layout({className, recurse, children, ...props}, context) {
+	const { main, sections } = getSections(children)
+	processNode(main, sections, { ...context }, recurse)
+	return children && children.length === 1 ? children[0] : (
+		<div className={className || 'Layout'}>{children}</div>
+	)
 }
 
-class Section extends Component {
-	render ({type, children, ...props}) {
-		return children && (children.length === 1) ? children[0] : (
-			<div {...props}>{children}</div>
-		)
-	}
-}
+function Section({type, children, ...props}, context) {return (
+	children && (children.length === 1) ? children[0] : (
+		<div {...props}>{children}</div>
+	)
+)}
 
 function getSections(n, result) {
 	if (!result) result = {sections:[]}
@@ -43,12 +39,13 @@ function processNode(node, sections, context, recurse, collectOnly, results) {
 			if (n.attributes && n.attributes.append) results[n.nodeName].push.apply(results[n.nodeName], n.children || [])
 			else if (n.attributes && n.attributes.prepend) results[n.nodeName].unshift.apply(results[n.nodeName], n.children || [])
 			else results[n.nodeName] = n.children || []
-			return
+			return // continue
 		}
+		leftovers.push(n)
 		if (typeof n.nodeName == 'function' && recurse) {
 			let props = { ...n.nodeName.defaultProps, ...n.attributes, children:n.children }
 			if (n.nodeName.prototype && typeof n.nodeName.prototype.render == 'function') {
-				let c = new n.nodeName(props, context);
+				let rn, c = new n.nodeName(props, context);
 				c.props = props;
 				c.context = context;
 				if (c.componentWillMount) c.componentWillMount();
@@ -58,7 +55,6 @@ function processNode(node, sections, context, recurse, collectOnly, results) {
 			else n = n.nodeName(props, context)
 			recurse--
 		}
-		leftovers.push(n)
 		processNode(n, sections, context, recurse, collectOnly, results)
 	})
 	if (! collectOnly) {
@@ -69,14 +65,14 @@ function processNode(node, sections, context, recurse, collectOnly, results) {
 }
 
 function isContribution(n, sections) {
-	const filtered = sections.filter(s => n.nodeName === s.attributes.type)
-	return filtered.length > 0
+	return sections.filter(s => n.nodeName === s.attributes.type).length > 0
 }
 
 
 export {
   Layout,
   Section,
+
 	getSections,
 	isContribution,
 	processNode

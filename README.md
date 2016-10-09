@@ -54,10 +54,10 @@ and the minified and gzipped distribution file weighs only 1 kB.
 ### Well documented
 A good library needs plenty of good docs. In the case of preact-layout, the
 docs are way bigger than the library itself! We have a
-[usage guide](https://download.github.io/preact-layout/docs/getting-started/Basic-usage.html),
+[Usage guide](https://download.github.io/preact-layout/docs/getting-started/Basic-usage.html),
 [API docs](https://download.github.io/preact-layout/docs/api/),
-[examples](https://download.github.io/preact-layout/docs/getting-started/Examples.html) and a
-[Preact Layout Kickstart](http://codepen.io/StijnDeWitt/pen/rrzJEA?editors=0010) CodePen to learn from.
+[Examples](https://download.github.io/preact-layout/docs/getting-started/Examples.html) and a
+[Preact Layout Kickstart CodePen](http://codepen.io/StijnDeWitt/pen/rrzJEA?editors=0010) to learn from.
 
 ### Well tested
 Good tests ensure not only that the code works, but that it keeps working! We use [Travis
@@ -151,7 +151,7 @@ This will result in:
 	</footer>
 </div>
 ```
-Read more in the [Basic Usage Guide](https://download.github.io/preact-layout/docs/getting-started/Basic-usage.html).
+Read more in the [Usage Guide](https://download.github.io/preact-layout/docs/getting-started/Usage-guide.html).
 
 ## Component Reference
 * [Layout](https://download.github.io/preact-layout/docs/api/Layout.html) - Create layouts using `Layout`
@@ -170,6 +170,10 @@ attribute on the `Layout` to some positive number. It defaults to `9`.
 ## Issues
 Add an issue in this project's [issue tracker](https://github.com/download/preact-layout/issues)
 to let me know of any problems you find, or questions you may have.
+
+## Contributing
+This project welcomes contributions from the community! 
+Learn more in the [contributing guide](https://download.github.io/preact-layout/docs/contributing-guide/).
 
 ## Copyright
 Copyright 2016 by [Stijn de Witt](http://StijnDeWitt.com). Some rights reserved.

@@ -28,7 +28,7 @@ describe('preact-layout', () => {
 				)
 			}
 
-			const result = render(
+			let result = render(
 				<Layout>
 					<div>
 						<Section type={Header}>
@@ -45,6 +45,11 @@ describe('preact-layout', () => {
 					</div>
 				</Layout>
 			)
+
+			// work around preact-render-to-string generating comment
+			// nodes for empty (null/undefined) vdom elements. It's
+			// a bug according to Jason
+			result = result.replace(/<!---->/g, '')
 
 			expect(result).toBe('<div><h1>my page</h1><div><article>main article</article></div>goodbye</div>')
 		})
@@ -114,11 +119,16 @@ describe('preact-layout', () => {
 				)
 			}
 
-			const result = render(
+			let result = render(
 				<MyLayout>
 					<MyPage />
 				</MyLayout>
 			)
+
+			// work around preact-render-to-string generating comment
+			// nodes for empty (null/undefined) vdom elements. It's
+			// a bug according to Jason
+			result = result.replace(/<!---->/g, '')
 
 			const expectedResult = `
 				<div>
@@ -453,11 +463,16 @@ describe('preact-layout', () => {
 				</div>
 			)}
 
-			const result = render(
+			let result = render(
 				<MyLayout>
 					<MyPage />
 				</MyLayout>
 			)
+
+			// work around preact-render-to-string generating comment
+			// nodes for empty (null/undefined) vdom elements. It's
+			// a bug according to Jason
+			result = result.replace(/<!---->/g, '')
 
 			const expectedResult = `
 				<div>
@@ -475,11 +490,16 @@ describe('preact-layout', () => {
 
 			expect(result).toBe(expectedResult)
 
-			const reversedResult = render(
+			result = render(
 				<ReversedLayout>
 					<MyPage />
 				</ReversedLayout>
 			)
+
+			// work around preact-render-to-string generating comment
+			// nodes for empty (null/undefined) vdom elements. It's
+			// a bug according to Jason
+			result = result.replace(/<!---->/g, '')
 
 			const reversedExpected = `
 				<div>
@@ -495,7 +515,7 @@ describe('preact-layout', () => {
 				</div>
 			`.replace(/\s+</g, '<').replace(/>\s+/g, '>')
 
-			expect(reversedResult).toBe(reversedExpected)
+			expect(result).toBe(reversedExpected)
 		})
 
 		it('works with component classes as well', () => {
@@ -544,11 +564,16 @@ describe('preact-layout', () => {
 				)}
 			}
 
-			const result = render(
+			let result = render(
 				<MyLayout>
 					<MyPage />
 				</MyLayout>
 			)
+
+			// work around preact-render-to-string generating comment
+			// nodes for empty (null/undefined) vdom elements. It's
+			// a bug according to Jason
+			result = result.replace(/<!---->/g, '')
 
 			const expectedResult = `
 				<div>
@@ -566,11 +591,16 @@ describe('preact-layout', () => {
 
 			expect(result).toBe(expectedResult)
 
-			const reversedResult = render(
+			result = render(
 				<ReversedLayout>
 					<MyPage />
 				</ReversedLayout>
 			)
+
+			// work around preact-render-to-string generating comment
+			// nodes for empty (null/undefined) vdom elements. It's
+			// a bug according to Jason
+			result = result.replace(/<!---->/g, '')
 
 			const reversedExpected = `
 				<div>
@@ -586,7 +616,7 @@ describe('preact-layout', () => {
 				</div>
 			`.replace(/\s+</g, '<').replace(/>\s+/g, '>')
 
-			expect(reversedResult).toBe(reversedExpected)
+			expect(result).toBe(reversedExpected)
 		})
 	})
 
