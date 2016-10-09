@@ -1,19 +1,8 @@
 import { h } from 'preact'
 
-function Layout({className, recurse, children, ...props}) {
-	if (recurse === undefined) recurse = 9
-	let sections = getSections(children)
-	const main = sections.filter(s => !s.attributes || !s.attributes.type)[0]
-	sections = sections.filter(s => s.attributes && s.attributes.type)
-	const contributions = {}
-	sections.forEach(s => contributions[s.attributes.type] = s.children || [])
-	if (main && main.children) {
-		main.children = collect(main.children, sections, contributions, recurse)
-		sections.forEach(s => {
-			let contribution = contributions[s.attributes.type]
-			s.children = contributions[s.attributes.type]
-		})
-	}
+function Layout({className, recurse, children, ...props}, context) {
+	const { main, sections } = getSections(children)
+	processNode(main, sections, { ...context }, recurse)
 	return children && children.length === 1 ? children[0] : (
 		<div className={className || 'Layout'}>{children}</div>
 	)
@@ -25,34 +14,54 @@ function Section({type, children, ...props}) {
 	)
 }
 
-function getSections(nodes) {
-	const results = []
-	nodes && nodes.forEach(n => {
-		if (n.nodeName === Section) results.push(n)
-		results.push.apply(results, getSections(n.children))
+function getSections(n, result) {
+	if (!result) result = {sections:[]}
+	if (n.nodeName === Section) {
+		if (n.attributes && n.attributes.type) result.sections.push(n)
+		else result.main = n
+	}
+	const children = Array.isArray(n) ? n : n.children
+	children && children.forEach(c => {
+		getSections(c, result)
 	})
-	return results
+	return result
 }
 
-function collect(nodes, sections, results, recurse) {
-	const leftovers = []
-	nodes && nodes.forEach(n => {
+function processNode(node, sections, context, recurse, collectOnly, results) {
+	const leftovers = [], postProcess = !results
+	context = context || {}
+	if (recurse === undefined) recurse = 9
+	results = results || {}
+	sections.forEach(s => results[s.attributes.type] = results[s.attributes.type] || s.children || [])
+	node && node.children && node.children.forEach(n => {
 		if (isContribution(n, sections)) {
 			if (! results[n.nodeName]) results[n.nodeName] = []
-			const contributions = n.children || []
-			if (n.attributes && n.attributes.append) results[n.nodeName].push.apply(results[n.nodeName], contributions)
-			else if (n.attributes && n.attributes.prepend) results[n.nodeName].unshift.apply(results[n.nodeName], contributions)
-			else results[n.nodeName] = contributions
+			if (n.attributes && n.attributes.append) results[n.nodeName].push.apply(results[n.nodeName], n.children || [])
+			else if (n.attributes && n.attributes.prepend) results[n.nodeName].unshift.apply(results[n.nodeName], n.children || [])
+			else results[n.nodeName] = n.children || []
 			return
 		}
 		if (typeof n.nodeName == 'function' && recurse) {
-			n = n.nodeName({...n.attributes, children:n.children})
+			let props = { ...n.nodeName.defaultProps, ...n.attributes, children:n.children }
+			if (n.nodeName.prototype && typeof n.nodeName.prototype.render == 'function') {
+				let c = new n.nodeName(props, context);
+				c.props = props;
+				c.context = context;
+				if (c.componentWillMount) c.componentWillMount();
+				n = c.render(c.props, c.state, c.context);
+				if (c.getChildContext) context = { ...context, ...c.getChildContext() }
+			}	
+			else n = n.nodeName(props, context)
 			recurse--
 		}
 		leftovers.push(n)
-		if (n && n.children) n.children = collect(n.children, sections, results, recurse)
+		processNode(n, sections, context, recurse, collectOnly, results)
 	})
-	return leftovers
+	if (! collectOnly) {
+		if (node.children) node.children = leftovers
+		if (postProcess) sections.forEach(s => s.children = results[s.attributes.type])
+	}
+	return results
 }
 
 function isContribution(n, sections) {
@@ -60,7 +69,11 @@ function isContribution(n, sections) {
 	return filtered.length > 0
 }
 
+
 export {
   Layout,
   Section,
+	getSections,
+	isContribution,
+	processNode
 }

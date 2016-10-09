@@ -20,7 +20,7 @@
     "check:examples": "npm run build:examples && npm run test:examples",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
-    "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/index.jsx dist/preact-layout.umd.js",
+    "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/index.jsx dist/preact-layout.umd.js --display-modules --display-reasons --display-chunks",
     "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.jsx dist/preact-layout.min.js",
     "build:examples": "babel-node examples/buildAll.js",
     "build": "npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min",
@@ -111,6 +111,7 @@
   },
   "jest": {
     "testRegex": "(/test/.*\\.spec.jsx)$",
+    "preprocessorIgnorePatterns": ["(/build/|/docs/|/node_modules/(?!preact/src/))"],
     "moduleFileExtensions": [
       "js",
       "jsx"

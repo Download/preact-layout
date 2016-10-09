@@ -57,7 +57,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	exports.__esModule = true;
-	exports.Section = exports.Layout = undefined;
+	exports.processNode = exports.isContribution = exports.getSections = exports.Section = exports.Layout = undefined;
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -65,32 +65,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	function Layout(_ref) {
+	function Layout(_ref, context) {
 		var className = _ref.className;
 		var recurse = _ref.recurse;
 		var children = _ref.children;
 
 		var props = _objectWithoutProperties(_ref, ['className', 'recurse', 'children']);
 
-		if (recurse === undefined) recurse = 9;
-		var sections = getSections(children);
-		var main = sections.filter(function (s) {
-			return !s.attributes || !s.attributes.type;
-		})[0];
-		sections = sections.filter(function (s) {
-			return s.attributes && s.attributes.type;
-		});
-		var contributions = {};
-		sections.forEach(function (s) {
-			return contributions[s.attributes.type] = s.children || [];
-		});
-		if (main && main.children) {
-			main.children = collect(main.children, sections, contributions, recurse);
-			sections.forEach(function (s) {
-				var contribution = contributions[s.attributes.type];
-				s.children = contributions[s.attributes.type];
-			});
-		}
+		var _getSections = getSections(children);
+
+		var main = _getSections.main;
+		var sections = _getSections.sections;
+
+		processNode(main, sections, _extends({}, context), recurse);
 		return children && children.length === 1 ? children[0] : (0, _preact.h)(
 			'div',
 			{ className: className || 'Layout' },
@@ -111,32 +98,55 @@ return /******/ (function(modules) { // webpackBootstrap
 		);
 	}
 
-	function getSections(nodes) {
-		var results = [];
-		nodes && nodes.forEach(function (n) {
-			if (n.nodeName === Section) results.push(n);
-			results.push.apply(results, getSections(n.children));
+	function getSections(n, result) {
+		if (!result) result = { sections: [] };
+		if (n.nodeName === Section) {
+			if (n.attributes && n.attributes.type) result.sections.push(n);else result.main = n;
+		}
+		var children = Array.isArray(n) ? n : n.children;
+		children && children.forEach(function (c) {
+			getSections(c, result);
 		});
-		return results;
+		return result;
 	}
 
-	function collect(nodes, sections, results, recurse) {
-		var leftovers = [];
-		nodes && nodes.forEach(function (n) {
+	function processNode(node, sections, context, recurse, collectOnly, results) {
+		var leftovers = [],
+		    postProcess = !results;
+		context = context || {};
+		if (recurse === undefined) recurse = 9;
+		results = results || {};
+		sections.forEach(function (s) {
+			return results[s.attributes.type] = results[s.attributes.type] || s.children || [];
+		});
+		node && node.children && node.children.forEach(function (n) {
 			if (isContribution(n, sections)) {
 				if (!results[n.nodeName]) results[n.nodeName] = [];
-				var contributions = n.children || [];
-				if (n.attributes && n.attributes.append) results[n.nodeName].push.apply(results[n.nodeName], contributions);else if (n.attributes && n.attributes.prepend) results[n.nodeName].unshift.apply(results[n.nodeName], contributions);else results[n.nodeName] = contributions;
+				if (n.attributes && n.attributes.append) results[n.nodeName].push.apply(results[n.nodeName], n.children || []);else if (n.attributes && n.attributes.prepend) results[n.nodeName].unshift.apply(results[n.nodeName], n.children || []);else results[n.nodeName] = n.children || [];
 				return;
 			}
 			if (typeof n.nodeName == 'function' && recurse) {
-				n = n.nodeName(_extends({}, n.attributes, { children: n.children }));
+				var props = _extends({}, n.nodeName.defaultProps, n.attributes, { children: n.children });
+				if (n.nodeName.prototype && typeof n.nodeName.prototype.render == 'function') {
+					var c = new n.nodeName(props, context);
+					c.props = props;
+					c.context = context;
+					if (c.componentWillMount) c.componentWillMount();
+					n = c.render(c.props, c.state, c.context);
+					if (c.getChildContext) context = _extends({}, context, c.getChildContext());
+				} else n = n.nodeName(props, context);
 				recurse--;
 			}
 			leftovers.push(n);
-			if (n && n.children) n.children = collect(n.children, sections, results, recurse);
+			processNode(n, sections, context, recurse, collectOnly, results);
 		});
-		return leftovers;
+		if (!collectOnly) {
+			if (node.children) node.children = leftovers;
+			if (postProcess) sections.forEach(function (s) {
+				return s.children = results[s.attributes.type];
+			});
+		}
+		return results;
 	}
 
 	function isContribution(n, sections) {
@@ -148,6 +158,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.Layout = Layout;
 	exports.Section = Section;
+	exports.getSections = getSections;
+	exports.isContribution = isContribution;
+	exports.processNode = processNode;
 
 /***/ },
 /* 1 */
