@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
 import render from 'preact-render-to-string'
+import EventEmitter from 'uevents'
 
 import { Layout, Section, getSections, isContribution, processNode } from '../src'
 

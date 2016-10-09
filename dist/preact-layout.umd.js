@@ -65,38 +65,68 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	function Layout(_ref, context) {
-		var className = _ref.className;
-		var recurse = _ref.recurse;
-		var children = _ref.children;
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-		var props = _objectWithoutProperties(_ref, ['className', 'recurse', 'children']);
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-		var _getSections = getSections(children);
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-		var main = _getSections.main;
-		var sections = _getSections.sections;
+	var Layout = function (_Component) {
+		_inherits(Layout, _Component);
 
-		processNode(main, sections, _extends({}, context), recurse);
-		return children && children.length === 1 ? children[0] : (0, _preact.h)(
-			'div',
-			{ className: className || 'Layout' },
-			children
-		);
-	}
+		function Layout() {
+			_classCallCheck(this, Layout);
 
-	function Section(_ref2) {
-		var type = _ref2.type;
-		var children = _ref2.children;
+			return _possibleConstructorReturn(this, _Component.apply(this, arguments));
+		}
 
-		var props = _objectWithoutProperties(_ref2, ['type', 'children']);
+		Layout.prototype.render = function render(_ref, context) {
+			var className = _ref.className;
+			var recurse = _ref.recurse;
+			var children = _ref.children;
 
-		return children && children.length === 1 ? children[0] : (0, _preact.h)(
-			'div',
-			props,
-			children
-		);
-	}
+			var props = _objectWithoutProperties(_ref, ['className', 'recurse', 'children']);
+
+			var _getSections = getSections(children);
+
+			var main = _getSections.main;
+			var sections = _getSections.sections;
+
+			processNode(main, sections, _extends({}, context), recurse);
+			return children && children.length === 1 ? children[0] : (0, _preact.h)(
+				'div',
+				{ className: className || 'Layout' },
+				children
+			);
+		};
+
+		return Layout;
+	}(_preact.Component);
+
+	var Section = function (_Component2) {
+		_inherits(Section, _Component2);
+
+		function Section() {
+			_classCallCheck(this, Section);
+
+			return _possibleConstructorReturn(this, _Component2.apply(this, arguments));
+		}
+
+		Section.prototype.render = function render(_ref2) {
+			var type = _ref2.type;
+			var children = _ref2.children;
+
+			var props = _objectWithoutProperties(_ref2, ['type', 'children']);
+
+			return children && children.length === 1 ? children[0] : (0, _preact.h)(
+				'div',
+				props,
+				children
+			);
+		};
+
+		return Section;
+	}(_preact.Component);
 
 	function getSections(n, result) {
 		if (!result) result = { sections: [] };

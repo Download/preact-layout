@@ -1,17 +1,21 @@
-import { h } from 'preact'
+import { h, Component } from 'preact'
 
-function Layout({className, recurse, children, ...props}, context) {
-	const { main, sections } = getSections(children)
-	processNode(main, sections, { ...context }, recurse)
-	return children && children.length === 1 ? children[0] : (
-		<div className={className || 'Layout'}>{children}</div>
-	)
+class Layout extends Component {
+	render({className, recurse, children, ...props}, context) {
+		const { main, sections } = getSections(children)
+		processNode(main, sections, { ...context }, recurse)
+		return children && children.length === 1 ? children[0] : (
+			<div className={className || 'Layout'}>{children}</div>
+		)
+	}
 }
 
-function Section({type, children, ...props}) {
-	return children && (children.length === 1) ? children[0] : (
-		<div {...props}>{children}</div>
-	)
+class Section extends Component {
+	render ({type, children, ...props}) {
+		return children && (children.length === 1) ? children[0] : (
+			<div {...props}>{children}</div>
+		)
+	}
 }
 
 function getSections(n, result) {
