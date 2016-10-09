@@ -111,7 +111,6 @@
   },
   "jest": {
     "testRegex": "(/test/.*\\.spec.jsx)$",
-    "preprocessorIgnorePatterns": ["(/build/|/docs/|/node_modules/(?!preact/src/))"],
     "moduleFileExtensions": [
       "js",
       "jsx"
