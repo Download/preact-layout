@@ -1,0 +1,449 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>contribution functions · preact-layout</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../build/gitbook.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../contributing-guide/" />
+    
+    
+    <link rel="prev" href="Section.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../getting-started/">
+            
+                <a href="../getting-started/">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../getting-started/Setup.html">
+            
+                <a href="../getting-started/Setup.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../getting-started/Usage-guide.html">
+            
+                <a href="../getting-started/Usage-guide.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    Usage Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../getting-started/Examples.html">
+            
+                <a href="../getting-started/Examples.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Component Reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="Layout.html">
+            
+                <a href="Layout.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    Layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="Section.html">
+            
+                <a href="Section.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="contribution-functions.html">
+            
+                <a href="contribution-functions.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    contribution functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../contributing-guide/">
+            
+                <a href="../contributing-guide/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Contributing Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >contribution functions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="contribution-functions">Contribution functions</h1><p>Contribution functions act a bit like ES6 symbols, or &apos;tagging interfaces&apos; in
+Java speak. They don&apos;t do anything themselves, but allow a component to interact
+with a layout without being tighly coupled with it.</p><p>In the most basic scenario, we define the contribution functions right along
+our layout and also import them from there in our components:</p><p><em>Layout.js</em></p><pre><code class="lang-js"><span class="token keyword">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">Footer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">MyLayout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// use Header and Footer here</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span>
+    Header<span class="token punctuation">,</span>
+    Footer<span class="token punctuation">,</span>
+    MyLayout
+<span class="token punctuation">}</span></code></pre>
+<p><em>Component.js</em></p><pre><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Header<span class="token punctuation">,</span> Footer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./Layout&apos;</span>
+
+<span class="token keyword">function</span> <span class="token function">MyComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// use Header and Footer here</span>
+<span class="token punctuation">}</span></code></pre>
+<p>If our site has many layouts and many components contributing to those
+layouts, it will probably pay off to place the contribution functions in a
+separate file and reuse them where needed:</p><p><em>Sections.js</em></p><pre><code class="lang-js"><span class="token keyword">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">Footer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span>
+    Header<span class="token punctuation">,</span>
+    Footer
+<span class="token punctuation">}</span></code></pre>
+<p><em>Layout.js</em></p><pre><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Header<span class="token punctuation">,</span> Footer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./Sections&apos;</span>
+
+<span class="token keyword">function</span> <span class="token function">MyLayout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// use Header and Footer here</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span>
+    MyLayout
+<span class="token punctuation">}</span></code></pre>
+<p><em>Component.js</em></p><pre><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Header<span class="token punctuation">,</span> Footer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./Sections&apos;</span>
+
+<span class="token keyword">function</span> <span class="token function">MyComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// use Header and Footer here</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="attributes">Attributes</h2><h3 id="append">append</h3><p>When set, any contributions found will be <code>appended</code> to any existing
+default elements / prior contributions, instead of replacing them (default)</p><h3 id="prepend">prepend</h3><p>When set, any contributions found will be <code>prepended</code> before any existing
+default elements / prior contributions, instead of replacing them (default)</p><h2 id="example">Example</h2><p><em>(assuming <code>Header</code> is a contribution function)</em></p><pre><code class="lang-js"><span class="token keyword">function</span> <span class="token function">MyComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>Header append<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>b<span class="token operator">&gt;</span>This will be appended to the header section instead <span class="token keyword">of</span> replacing it<span class="token operator">&lt;</span><span class="token operator">/</span>b<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>Header<span class="token operator">&gt;</span>
+
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Stuff here ends up <span class="token keyword">in</span> the main section<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre>
+<h2 id="see-also">See also</h2><ul><li><a href="Layout.html">Layout</a>
+</li>
+<li><a href="Section.html">Section</a>
+</li></ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Section.html" class="navigation navigation-prev " aria-label="Previous page: Section">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../contributing-guide/" class="navigation navigation-next " aria-label="Next page: Contributing Guide">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"contribution functions","level":"1.3.3","depth":2,"next":{"title":"Contributing Guide","level":"1.4","depth":1,"path":"docs/contributing-guide/README.md","ref":"docs/contributing-guide/README.md","articles":[]},"previous":{"title":"Section","level":"1.3.2","depth":2,"path":"docs/api/Section.md","ref":"docs/api/Section.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","github","anchorjs"],"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Download/preact-layout/"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"prism":{},"anchorjs":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"preact-layout","gitbook":"3.x.x"},"file":{"path":"docs/api/contribution-functions.md","mtime":"2016-09-29T17:42:04.799Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-10T00:09:35.617Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

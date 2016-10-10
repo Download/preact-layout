@@ -1,0 +1,531 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Usage Guide · preact-layout</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../build/gitbook.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Examples.html" />
+    
+    
+    <link rel="prev" href="Setup.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Setup.html">
+            
+                <a href="Setup.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="Usage-guide.html">
+            
+                <a href="Usage-guide.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    Usage Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Examples.html">
+            
+                <a href="Examples.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../api/">
+            
+                <a href="../api/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Component Reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../api/Layout.html">
+            
+                <a href="../api/Layout.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    Layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../api/Section.html">
+            
+                <a href="../api/Section.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    Section
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../api/contribution-functions.html">
+            
+                <a href="../api/contribution-functions.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    contribution functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../contributing-guide/">
+            
+                <a href="../contributing-guide/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Contributing Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Usage Guide</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="usage-guide">Usage Guide</h1><p>Using preact-layout requires you to:</p><ul><li>Define contribution functions 
+</li>
+<li>Create a layout referncing these contribution functions 
+</li>
+<li>Make components that use the contribution functions 
+</li>
+<li>Learn about caveats
+</li></ul>
+<h2 id="define-contribution-functions">Define contribution functions</h2><p>Define <em>contribution functions</em> to represent the different sections 
+of your website / app:</p><pre><code class="lang-js"><span class="token keyword">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">Footer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+<p>These functions&apos;s don&apos;t do anything in and of themselves, but they serve as
+symbols that can be used by both layouts and regular components.</p><h2 id="create-a-layout">Create a layout</h2><p>Use <code>Layout</code> to create a layout which is subdivided in sections. Use <code>Section</code>
+to create those sections. There should be exactly one main section (not associated
+with a contribution function) and any <code>children</code> should be rendered inside this main section.
+In addition, layouts can have zero or more extra sections, each of which must be
+associated with a different contribution function, using the <code>type</code>  attribute.</p><p>Have a look at this example:</p><pre><code class="lang-js"><span class="token keyword">function</span> <span class="token function">MyLayout</span><span class="token punctuation">(</span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>Layout<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>header<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Section type<span class="token operator">=</span><span class="token punctuation">{</span>Header<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Default title<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Section<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>header<span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span>Section<span class="token operator">&gt;</span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>Section<span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span>footer<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Section type<span class="token operator">=</span><span class="token punctuation">{</span>Footer<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span>Default footer<span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Section<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>footer<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>Layout<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Much simpler than it sounded right? But here&apos;s the cool trick: Any children
+of the main section will be rendered before the sections themselves and if they
+produce <em>layout contributions</em>, those contributions will be moved to the correct
+section based on the associated contribution function.</p><h2 id="make-components-that-use-the-contribution-functions">Make components that use the contribution functions</h2><p>Again have a look at an example:</p><pre><code class="lang-js"><span class="token keyword">function</span> <span class="token function">HomePage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>Header<span class="token operator">&gt;</span><span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>This is the homepage<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Header<span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>And thats how preact<span class="token operator">-</span>layout works<span class="token punctuation">.</span> It takes the contributions made by the
+            children and shows them <span class="token keyword">in</span> the correct region <span class="token keyword">of</span> the layout<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span>Footer<span class="token operator">&gt;</span><span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Thank you <span class="token keyword">for</span> visiting<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Footer<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>As you can see, in our components, we wrap the content that we want to 
+contribute to other sections of the layout in JSX tags created from our
+contribution functions.</p><p>The magic happens when we combine the layout and the page we just created:</p><pre><code class="lang-js"><span class="token keyword">function</span> <span class="token function">Website</span><span class="token punctuation">(</span><span class="token punctuation">{</span>children<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>props<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>MyLayout<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>HomePage <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>MyLayout<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p><code>Website</code> will render this output:</p><pre><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>This is the homepage!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>And thats how preact-layout works. It takes the contributions made by the
+        children and shows them in the correct region of the layout.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Thank you for visiting!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+<p>Because we separated the layout concerns from the <code>HomePage</code> component, we
+can easily make an alternative layout and use that instead:</p><pre><code class="lang-js"><span class="token keyword">function</span> <span class="token function">ReversedLayout</span><span class="token punctuation">(</span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>Layout<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>footer<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Section type<span class="token operator">=</span><span class="token punctuation">{</span>Footer<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span>Default footer<span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Section<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>footer<span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span>Section<span class="token operator">&gt;</span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>Section<span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span>header<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Section type<span class="token operator">=</span><span class="token punctuation">{</span>Header<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Default title<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Section<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>header<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>Layout<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Change <code>Website</code> to use the alternative layout and you&apos;re done:</p><pre><code class="lang-js"><span class="token keyword">function</span> <span class="token function">Website</span><span class="token punctuation">(</span><span class="token punctuation">{</span>children<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>props<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>ReversedLayout<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>HomePage <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>ReversedLayout<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The contributions made by <code>HomePage</code> will automatically land in the correct place:</p><pre><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Thank you for visiting!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>And thats how preact-layout works. It takes the contributions made by the
+        children and shows them in the correct region of the layout.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>This is the homepage!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+<h2 id="caveats">Caveats</h2><p>In the examples above we used stateless functional components. 
+But preact-layout can be used with class components just as well:</p><pre><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">HomePage</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>Header<span class="token operator">&gt;</span><span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>This is the homepage<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Header<span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>And thats how preact<span class="token operator">-</span>layout works<span class="token punctuation">.</span> It takes the contributions made by the
+            children and shows them <span class="token keyword">in</span> the correct region <span class="token keyword">of</span> the layout<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span>Footer<span class="token operator">&gt;</span><span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Thank you <span class="token keyword">for</span> visiting<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Footer<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This works just as great. But things become a bit more tricky when
+we start using <em>stateful</em> class components. Consider this example:</p><pre><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">HomePage</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+    state <span class="token operator">=</span> <span class="token punctuation">{</span>text<span class="token punctuation">:</span> <span class="token string">&apos;Hello, world!&apos;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>text<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>Header<span class="token operator">&gt;</span><span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span><span class="token punctuation">{</span>text<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Header<span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>This paragraph is <span class="token keyword">in</span> the main section<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>input value<span class="token operator">=</span><span class="token punctuation">{</span>text<span class="token punctuation">}</span> onInput<span class="token operator">=</span><span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">linkState</span><span class="token punctuation">(</span><span class="token string">&apos;text&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span>Footer<span class="token operator">&gt;</span><span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Thank you <span class="token keyword">for</span> visiting<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Footer<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This will render fine and appears to work, until we change the text 
+in the input. The changes will not be reflected in the header. The reason
+for this is that the children of the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Header</span><span class="token punctuation">&gt;</span></span></code> tag are actually moved
+outside of the <code>HomePage</code> component by the layout, so Preact does not 
+re-render them in response to state changes.</p><p>The children of the <code>HomePage</code> that are not contributed to other sections
+will respond to state changes as expected. Also, you are free to</p><p>contribute stateful components. It&apos;s just that inside the component 
+making the contributions, local state is not accessible in the
+contributed sections.</p><p>So either make components that contribute markup to the layout stateless,
+or take care to only make use of state in the main section of the
+component and not in those sections that are contributed to the layout.</p><p>The <a href="">Preact Layout Kickstart CodePen</a> actually demonstrates this.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Setup.html" class="navigation navigation-prev " aria-label="Previous page: Setup">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Examples.html" class="navigation navigation-next " aria-label="Next page: Examples">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Usage Guide","level":"1.2.2","depth":2,"next":{"title":"Examples","level":"1.2.3","depth":2,"path":"docs/getting-started/Examples.md","ref":"docs/getting-started/Examples.md","articles":[]},"previous":{"title":"Setup","level":"1.2.1","depth":2,"path":"docs/getting-started/Setup.md","ref":"docs/getting-started/Setup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","github","anchorjs"],"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Download/preact-layout/"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"prism":{},"anchorjs":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"preact-layout","gitbook":"3.x.x"},"file":{"path":"docs/getting-started/Usage-guide.md","mtime":"2016-10-09T22:35:12.358Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-10T00:09:35.617Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
