@@ -53,7 +53,7 @@
   },
   "homepage": "http://download.github.io/preact-layout",
   "dependencies": {
-    "preact": "^6.3.0",
+    "preact": "^6.4.0",
     "preact-render-to-string": "^3.2.1"
   },
   "devDependencies": {
