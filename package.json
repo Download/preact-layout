@@ -93,7 +93,7 @@
     "preact-render-to-string": "^3.1.1",
     "rimraf": "^2.3.4",
     "touch": "^1.0.0",
-    "uevents": "^0.5.0",
+    "uevents": "^1.0.0",
     "webpack": "^1.9.6"
   },
   "npmName": "preact-layout",
