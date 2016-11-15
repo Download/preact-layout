@@ -204,4 +204,4 @@ So either make components that contribute markup to the layout stateless,
 or take care to only make use of state in the main section of the
 component and not in those sections that are contributed to the layout.
 
-The [Preact Layout Kickstart CodePen]() actually demonstrates this.
+The [Preact Layout Kickstart CodePen](http://codepen.io/StijnDeWitt/pen/rrzJEA) actually demonstrates this.
