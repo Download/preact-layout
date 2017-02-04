@@ -1,6 +1,8 @@
 # preact-layout
 #### Small and simple layout library for Preact.
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Download/preact-layout.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/preact-layout.svg)](https://npmjs.com/package/preact-layout)
 [![license](https://img.shields.io/npm/l/preact-layout.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![travis](https://img.shields.io/travis/Download/preact-layout.svg)](https://travis-ci.org/Download/preact-layout)
