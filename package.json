@@ -53,8 +53,7 @@
   },
   "homepage": "http://download.github.io/preact-layout",
   "dependencies": {
-    "preact": "^6.3.0",
-    "preact-render-to-string": "^3.2.1"
+    "preact": "^10.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
@@ -90,7 +89,7 @@
     "glob": "^7.1.1",
     "jest": "^17.0.0",
     "loose-envify": "^1.1.0",
-    "preact-render-to-string": "^3.1.1",
+    "preact-render-to-string": "^6.1.0",
     "rimraf": "^2.3.4",
     "touch": "^1.0.0",
     "uevents": "^1.0.0",
